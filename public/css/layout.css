@@ -1,0 +1,33 @@
+.container-fluid{
+	padding-top: 50px;
+}
+
+.sidebar-nav-fixed{
+	position:fixed;
+    top:60px;
+    width:18%;
+}
+
+/*
+	Hashtagged links not showing up (navbar)
+*/
+section:before {
+  display: block;
+  content: " ";
+  margin-top: -40px;
+  height: 40px;
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+	.sidebar-nav-fixed {
+		width: auto;
+	}
+}
+
+@media (max-width: 979px) {
+	.sidebar-nav-fixed {
+		position: static;
+		width: auto;
+	}
+}
