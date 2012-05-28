@@ -2,9 +2,8 @@
 	Funciones para el init de la pagina
 */
 
-$().ready(function($) {
-	//alert('Hola');
-
+//Inicializa la pagina project.html
+function initProject(){
 	//Init for carousel
 	$('.carousel').carousel();	
 
@@ -19,6 +18,25 @@ $().ready(function($) {
 	//Init for scrollspy on sections of project (not needed because we made it by markup)
 	//$('#nav-project').scrollspy();
 	//console.log($('#nav-project'));
+}
 
+//Inicializa la pagina projects.html
+function initProjects(){
+}
+
+$().ready(function($) {
+	//alert('Hola');
+
+	//If i'm on project.html...
+	if($('#nav-project').length > 0){ 
+		initProject();
+	}
+
+	//If i'm on projectS.html
+	if($('#project-box').length > 0){
+		initProjects();
+	}
+
+	//Common init for all pages
 	$('#search-projects').typeahead({source: ["Stracomter III"]});
 });
