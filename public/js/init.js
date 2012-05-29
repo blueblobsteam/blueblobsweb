@@ -25,15 +25,32 @@ function initProjects(){
 
 }
 
+function addRandomLi(){
+	//Add lorem-ipsum items (for debug)
+	var container = $('#members-box .thumbnails');
+	for(var i = 0; i < 15; i++){
+		var li = $('<li class="span3 thumbnail members-item"></li>');
+		li.html(i + fillLorem(Math.floor((Math.random()*15)+5)));
+		container.append(li);
+	}
+}
+
 function initMembers(){
-	
-	var container = $('#members-box');
-	container.imagesLoaded( function (){
-		container.masonry({
-			itemSelector: '.thumbnail'
-		});	
-	});
+	addRandomLi();
+	var options = {
+		autoResize: true, // This will auto-update the layout when the browser window is resized.
+        container: $('#members-box'), // Optional, used for some extra CSS styling
+        offset: 10
+	};
+
+	// Get a reference to your grid items.
+    var handler = $('#members-box ul .members-item');
+      
+    // Call the layout function.
+    handler.wookmark(options);
+
 	alert('hola');
+
 }
 
 $().ready(function($) {

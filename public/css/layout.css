@@ -36,8 +36,30 @@ section:before {
 	}
 }
 
-.members-item{
-	/*float: left;*/
+/*
+	'Hack' for fixing the thumbnails list
+*/
+
+ul.thumbnails li.span4:nth-child(3n + 4) {
+  /*margin-left : 0px;*/
 }
 
+ul.thumbnails li.span3:nth-child(4n + 5) {
+  /*margin-left : 0px;*/
+}
 
+ul.thumbnails li.span12 + li {
+  /*margin-left : 0px;*/
+}
+
+/*
+	Styles for the members
+*/
+#members-box{
+	/*float: left;*/
+	position: relative;
+	/*padding-top: 50px;*/
+}
+
+.members-item{
+}
