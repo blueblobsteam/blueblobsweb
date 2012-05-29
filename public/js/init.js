@@ -20,36 +20,35 @@ function initProject(){
 	//console.log($('#nav-project'));
 }
 
-//Inicializa la pagina projects.html
-function initProjects(){
-}
-
-function addRandomLi(){
-	//Add lorem-ipsum items (for debug)
-	var container = $('#members-box .thumbnails');
-	for(var i = 0; i < 15; i++){
-		var li = $('<li class="span3 thumbnail members-item"></li>');
-		li.html(i + fillLorem(Math.floor((Math.random()*15)+5)));
-		container.append(li);
-	}
-}
-
-function initMembers(){
-	addRandomLi();
+function initGallery(){
 	var options = {
 		autoResize: true, // This will auto-update the layout when the browser window is resized.
-        container: $('#members-box'), // Optional, used for some extra CSS styling
+        container: $('.gallery-box'), // Optional, used for some extra CSS styling
         offset: 10
 	};
 
 	// Get a reference to your grid items.
-    var handler = $('#members-box ul .members-item');
+    var handler = $('.gallery-box ul .gallery-item');
       
     // Call the layout function.
     handler.wookmark(options);
+}
 
-	alert('hola');
+//Inicializa la pagina projects.html
+function initProjects(){
 
+}
+
+function addRandomLi(){
+	//Add lorem-ipsum items (for debug)
+	var container = $('.gallery-box .thumbnails');
+	//console.log(container);
+	for(var i = 0; i < 15; i++){
+		var li = $('<li class="span3 thumbnail gallery-item"></li>');
+		li.html(i + fillLorem(Math.floor((Math.random()*15)+5)));
+		//console.log(li);
+		container.append(li);
+	}
 }
 
 $().ready(function($) {
@@ -61,13 +60,19 @@ $().ready(function($) {
 	}
 
 	//If i'm on projectS.html
-	if($('#project-box').length > 0){
+	if($('#projects-list').length > 0){
 		initProjects();
 	}
 
 	//If i'm on members.html
-	if($('#members-box').length > 0){
-		initMembers();
+	if($('#members-list').length > 0){
+		addRandomLi();
+	}
+
+	//If i have a gallery...
+	if($('.gallery-box').length > 0){
+		//alert('init gallery');
+		initGallery();
 	}
 
 	//Common init for all pages

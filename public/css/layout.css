@@ -62,13 +62,13 @@ ul.thumbnails li.span12 + li {
 /*
 	Styles for the members
 */
-#members-box{
+.gallery-box{
 	/*float: left;*/
 	position: relative;
 	/*padding-top: 50px;*/
 }
 
-.members-item{
+.gallery-item{
 }
 
 
