@@ -1,3 +1,8 @@
+body
+{
+	background:url(../img/back2.png);
+}
+
 .container-fluid{
 	padding-top: 50px;
 }
@@ -6,10 +11,6 @@
 	position:fixed;
     top:60px;
     width:18%;
-}
-
-body {
-	background: url(../img/pattern.png);
 }
 
 /*
@@ -34,6 +35,12 @@ section:before {
 		position: static;
 		width: auto;
 	}
+}
+
+.bar-order
+{
+	margin-top: -20px;
+	margin-bottom: -20px;
 }
 
 /*
@@ -63,3 +70,6 @@ ul.thumbnails li.span12 + li {
 
 .members-item{
 }
+
+
+

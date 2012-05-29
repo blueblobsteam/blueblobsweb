@@ -22,35 +22,6 @@ function initProject(){
 
 //Inicializa la pagina projects.html
 function initProjects(){
-
-}
-
-function addRandomLi(){
-	//Add lorem-ipsum items (for debug)
-	var container = $('#members-box .thumbnails');
-	for(var i = 0; i < 15; i++){
-		var li = $('<li class="span3 thumbnail members-item"></li>');
-		li.html(i + fillLorem(Math.floor((Math.random()*15)+5)));
-		container.append(li);
-	}
-}
-
-function initMembers(){
-	addRandomLi();
-	var options = {
-		autoResize: true, // This will auto-update the layout when the browser window is resized.
-        container: $('#members-box'), // Optional, used for some extra CSS styling
-        offset: 10
-	};
-
-	// Get a reference to your grid items.
-    var handler = $('#members-box ul .members-item');
-      
-    // Call the layout function.
-    handler.wookmark(options);
-
-	alert('hola');
-
 }
 
 $().ready(function($) {
@@ -66,12 +37,11 @@ $().ready(function($) {
 		initProjects();
 	}
 
-	//If i'm on members.html
-	if($('#members-box').length > 0){
-		initMembers();
-	}
-
 	//Common init for all pages
 	$('#search-projects').typeahead({source: ["Stracomter III"]});
-	$('.dropdown-toggle').dropdown();
 });
+
+function modal()
+{
+	$('#myModal').modal('toggle');
+}
