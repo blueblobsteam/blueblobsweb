@@ -20,6 +20,12 @@ function initProject(){
 	//console.log($('#nav-project'));
 }
 
+
+function modal()
+{
+	$('#myModal').modal('toggle');
+}
+
 function initGallery(){
 	var options = {
 		autoResize: true, // This will auto-update the layout when the browser window is resized.
@@ -51,6 +57,10 @@ function addRandomLi(){
 	}
 }
 
+function initMembers(){
+	addRandomLi();
+}
+
 $().ready(function($) {
 	//alert('Hola');
 
@@ -66,7 +76,7 @@ $().ready(function($) {
 
 	//If i'm on members.html
 	if($('#members-list').length > 0){
-		addRandomLi();
+		initMembers();
 	}
 
 	//If i have a gallery...
@@ -79,8 +89,3 @@ $().ready(function($) {
 	$('#search-projects').typeahead({source: ["Stracomter III"]});
 	$('.dropdown-toggle').dropdown();
 });
-
-function modal()
-{
-	$('#myModal').modal('toggle');
-}
