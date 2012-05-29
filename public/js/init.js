@@ -40,3 +40,8 @@ $().ready(function($) {
 	//Common init for all pages
 	$('#search-projects').typeahead({source: ["Stracomter III"]});
 });
+
+function modal()
+{
+	$('#myModal').modal('toggle');
+}

@@ -31,3 +31,9 @@ section:before {
 		width: auto;
 	}
 }
+
+.bar-order
+{
+	margin-top: -20px;
+	margin-bottom: -20px;
+}

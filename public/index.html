@@ -32,6 +32,24 @@
 			</div>
 		</div>
 	</div>
+
+
+	<div class="modal hide fade in" id="myModal">
+	  <div class="modal-header">
+	    <button class="close" data-dismiss="modal">×</button>
+	    <h3>Titulo del Proyecto</h3>
+	  </div>
+	  <div class="modal-body">
+	  	<img src="http://placehold.it/260x180" alt="Simple placeholder of 260x180" width="260" height="180">				
+	    <p>Descripcion del proyecto</p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="javascript:modal()" class="btn btn-inverse">Close</a>
+	    <a href="project.html" class="btn btn-primary">View more</a>
+	  </div>
+	</div>
+
+
 	<div class="container-fluid">
 		<div class="hero-unit">
 			<h1>BlueBlobs Team</h1>
@@ -52,7 +70,7 @@
 				<h2>
 					BlueBlobs' WebSite
 				</h2>
-				<img src="http://placehold.it/260x180" alt="Simple placeholder of 260x180" width="260" height="180">
+				<a href="javascript:modal()"><img src="http://placehold.it/260x180" alt="Simple placeholder of 260x180" width="260" height="180"></a>
 				<p>Our own website. Using bootstrap, PHP, ...</p>
 				<p><a class="btn btn-primary" href="project.html">View more</a></p>
 			</div>
@@ -60,7 +78,7 @@
 				<h2>
 					CandyNapper
 				</h2>
-				<img src="http://placehold.it/260x180" alt="Simple placeholder of 260x180" width="260" height="180">
+				<a href="javascript:modal()"><img src="http://placehold.it/260x180" alt="Simple placeholder of 260x180" width="260" height="180"></a>
 				<p>Game based on Hans &amp; Gretel's tale</p>
 				<p><a class="btn btn-primary" href="project.html">View more</a></p>
 			</div>
@@ -68,7 +86,7 @@
 				<h2>
 					Stracomter III
 				</h2>
-				<img src="http://placehold.it/260x180" alt="Simple placeholder of 260x180" width="260" height="180">
+				<a href="javascript:modal()"><img src="http://placehold.it/260x180" alt="Simple placeholder of 260x180" width="260" height="180"></a>
 				<p>The best game in the world</p>
 				<p><a class="btn btn-primary" href="project.html">View more</a></p>
 			</div>
@@ -81,6 +99,8 @@
 		</footer>
 	</div>
 
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
 </body>
 </html>
