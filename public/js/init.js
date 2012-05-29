@@ -22,6 +22,18 @@ function initProject(){
 
 //Inicializa la pagina projects.html
 function initProjects(){
+
+}
+
+function initMembers(){
+	
+	var container = $('#members-box');
+	container.imagesLoaded( function (){
+		container.masonry({
+			itemSelector: '.thumbnail'
+		});	
+	});
+	alert('hola');
 }
 
 $().ready(function($) {
@@ -37,6 +49,12 @@ $().ready(function($) {
 		initProjects();
 	}
 
+	//If i'm on members.html
+	if($('#members-box').length > 0){
+		initMembers();
+	}
+
 	//Common init for all pages
 	$('#search-projects').typeahead({source: ["Stracomter III"]});
+	$('.dropdown-toggle').dropdown();
 });

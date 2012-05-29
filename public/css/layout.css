@@ -8,6 +8,10 @@
     width:18%;
 }
 
+body {
+	background: url(../img/pattern.png);
+}
+
 /*
 	Hashtagged links not showing up (navbar)
 */
@@ -31,3 +35,9 @@ section:before {
 		width: auto;
 	}
 }
+
+.members-item{
+	/*float: left;*/
+}
+
+
