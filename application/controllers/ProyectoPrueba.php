@@ -2,7 +2,7 @@
 
 class ProyectoPrueba extends CI_Controller {
 
-	public function view($page = 'home')
+	public function view($id_proyecto = 1)
 	{
 /*
 		echo "<html>";
@@ -25,27 +25,39 @@ class ProyectoPrueba extends CI_Controller {
 		$config['char_set'] = "utf8";
 		//$config['dbcollat'] = "utf8_general_ci";
 
+		//echo "El Proyecto es: " . $id_proyecto . "</br>"; 
+
 
 		$this->load->database($config);
 
-		$query = $this->db->query('SELECT * FROM Proyecto where IdProyecto = \'1\'');
-
-		
-		//$data = array(
-        //       'lista_paises' => ''
-        //  );
 		$data = array();
-
 		$data['proyecto'] = "";
+		$data['tecnologias'] = array();
+		$data['fotos'] = array();
 
-		
+		$query = $this->db->query("SELECT * FROM Proyecto where IdProyecto = '$id_proyecto'");
 
-		
-
+		//Guardo el Proyecto:
 		foreach ($query->result() as $row)
 		{
 		    $data['proyecto'] = $row;
 		}
+
+		$query = $this->db->query("SELECT * FROM Tecnologia where IdTecnologia in (SELECT Tecnologia FROM Proyecto_Tecnologia where Proyecto = '$id_proyecto')");
+
+		foreach ($query->result() as $row)
+		{
+		    array_push($data['tecnologias'], $row);
+		}
+
+		$query = $this->db->query("SELECT * FROM Foto where IdFoto in (SELECT Foto FROM Foto_Proyecto where Proyecto = '$id_proyecto')");
+
+		foreach ($query->result() as $row)
+		{
+		    array_push($data['fotos'], $row);
+		}
+
+
 
 		$this->load->view('ProyectoPrueba', $data);
 

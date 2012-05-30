@@ -85,15 +85,15 @@
 					<div id="myCarousel" class="carousel slide">
 					  <!-- Carousel items -->
 					  <div class="carousel-inner">
-					    <div class="active item">
+					    <!--<div class="active item">
 					    	<img src="../../public/img/stracomter3/p2.jpg" width="920" height="500"/>
 					    	 <div class="carousel-caption">
 
 							  <h4>Menu</h4>
 							  <p>Menu inicial del stracomter 3</p>
 
-							 </div><!-- Carousel caption -->
-					    </div><!-- Carousel item -->
+							 </div>
+					    </div>
 
 					    <div class="item">
 					    	<img src="../../public/img/stracomter3/p1.jpg" width="920" height="500"/>
@@ -102,8 +102,8 @@
 							  <h4>Completado</h4>
 							  <p>Pantalla de nivel completado</p>
 
-							 </div><!-- Carousel caption -->
-					    </div><!-- Carousel item -->
+							 </div>
+					    </div>
 					    <div class="item">
 					    	<img src="../../public/img/stracomter3/p3.jpg" width="920" height="500"/>
 					    	 <div class="carousel-caption">
@@ -111,8 +111,35 @@
 							  <h4>Ingame</h4>
 							  <p>Imagen del juego ingame</p>
 
-							 </div><!-- Carousel caption -->
-					    </div><!-- Carousel item -->
+							 </div>
+					    </div>-->
+
+					    <?php
+
+					    $primera = true;
+					    foreach ($fotos as $foto) {
+							
+							if($primera)
+							{
+								echo "<div class=\"active item\">";
+								$primera = false;
+							}
+							else
+							{
+								echo "<div class=\"item\">";
+							}
+
+					    	echo "<img src=\"" . $foto->Fichero . "\" width=\"920\" height=\"500\"/>";
+					    	echo "<div class=\"carousel-caption\">";
+
+							echo "<h4>" . $foto->Titulo . "</h4>";
+							echo "<p>" . $foto->Descripcion . "</p>";
+
+							echo "</div>";
+					    	echo "</div>";
+						}
+
+						?>
 
 					  </div> <!-- Carousel list of items -->
 					  <!-- Carousel nav -->
@@ -138,12 +165,20 @@
 					<br>
 					<strong>Tecnologias usadas (C++, Node.js, pene de ruben, ...)</strong>
 					<br>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<?php
+
+						foreach ($tecnologias as $tecnologia) {
+							
+							echo "<h3>Nombre</h3>";
+							echo $tecnologia->Nombre;
+							echo "<h3>Descripcion</h3>";
+							echo $tecnologia->Descripcion;
+							echo "<h3>Web</h3>";
+							echo "<a>" . $tecnologia->Web . "</a>";
+						}
+						
+
+					?>
 				</section> <!-- Technologies used on project -->
 
 				<section id="documentation">
