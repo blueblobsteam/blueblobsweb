@@ -69,8 +69,22 @@ ul.thumbnails li.span12 + li {
 }
 
 .gallery-item{
-	background-color: yellow;
+  color: #FFF;
+  background: #333;
+  background: rgba(0, 0, 0, 0.75);
+
+}
+.gallery-item a
+{
+	margin: auto;
 }
 
+.menu-bb {
+  background: #333;
+  background: rgba(0, 0, 0, 0.75);
+}
 
-
+.menu-bb h4,
+.menu-bb p {
+  color: #333;
+}
